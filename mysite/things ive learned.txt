@@ -1,0 +1,15 @@
+Basic layout:
+	head
+		
+	Body
+		contains most info, contains articles
+			articles
+				like "cards". Contain more concentrated information
+	Footer
+		just as sounds, usually for end statements like the date, my name, any last bit of info
+Margin
+-spacing around things like articles
+	GAP is a better alternative isntead of figuring out the Margin values.
+
+rem
+-number system? each value is a number followed by"rem" like "1rem" = 1

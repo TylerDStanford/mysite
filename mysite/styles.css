@@ -1,0 +1,69 @@
+:root { --max: 900px; font-family: math; }
+* { box-sizing: border-box; }
+body { margin: 0; line-height: 1.5; }
+header, main, footer { max-width: var(--max); margin: 0 auto; padding: 1rem; }
+header { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; border-bottom: 1px solid #ddd; }
+nav a { margin-right: .75rem; text-decoration: none; color: #000;}
+nav a:hover { text-decoration: underline; }
+section { padding-block: 1rem; }
+article { padding: 1rem; border: 1px solid #eee; border-radius: .75rem; box-shadow: 0 4px 6px rgba(0,0,0,.1);background: #f9f9f9;}
+footer { border-top: 1px solid #ddd; color: #555; }
+
+.media {
+  display: flex;
+  align-items: flex-start;   /* use 'center' to vertical-center the box */
+  gap: 1rem;                 /* space between image and box */
+}
+
+/* Image */
+.media__img {
+  width: 250px;              /* the visual width you want */
+  aspect-ratio: 1;           /* keep it square */
+  object-fit: cover;         /* crop if needed */
+  border-radius: 0.5rem;        /* round avatar (optional) */
+}
+
+/* Text box */
+.media__box {
+  flex: 1;                   /* take remaining space */
+  min-width: 0;              /* allows flex item to shrink instead of overflowing */
+  background: #fff;          /* “box” look (optional) */
+  border: 1px solid #ffffff;
+  border-radius: .5rem;
+  padding: 1rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
+
+/* (Optional) Tidy button style */
+.btn { display:inline-block; padding:.5rem .75rem; border:1px solid #ddd; border-radius:.5rem; text-decoration:none; color: black}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.12); }
+
+
+/* Responsive: stack on small screens */
+@media (max-width: 600px) {
+  .media { flex-direction: column; align-items: center; text-align: center; }
+  .media__box { width: 100%; }
+}
+
+/*Used to make the project boxes stack on top of eachother on small screens or double up on large ones.*/
+#projects .grid { display: flex; flex-wrap: wrap; gap: 1rem; }
+#projects .grid > article { flex: 1 1 280px; }
+
+/*Makes the animation when you hover over each project box*/
+article {
+    transition: transform .15s ease, box-shadow .15s ease;
+    background: #fff; 
+  }
+  
+  article:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  }
+
+/* default (mobile): the flex above already stacks nicely */
+
+@media (min-width: 700px) {
+    #projects .grid > article {
+      flex: 1 1 320px; /* a bit wider on tablets+ */
+    }
+  }
