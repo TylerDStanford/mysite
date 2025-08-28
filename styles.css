@@ -4,7 +4,7 @@ body { margin: 0; line-height: 1.5; }
 header, main, footer { max-width: var(--max); margin: 0 auto; padding: 1rem; }
 header { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; border-bottom: 1px solid #ddd; }
 nav a { margin-right: .75rem; text-decoration: none; color: #000;}
-nav a:hover { text-decoration: underline; }
+nav a:hover { text-decoration: underline; text-align: center; }
 section { padding-block: 1rem; }
 article { padding: 1rem; border: 1px solid #eee; border-radius: .75rem; box-shadow: 0 4px 6px rgba(0,0,0,.1);background: #f9f9f9;}
 footer { border-top: 1px solid #ddd; color: #555; }
@@ -21,6 +21,15 @@ footer { border-top: 1px solid #ddd; color: #555; }
   aspect-ratio: 1;           /* keep it square */
   object-fit: cover;         /* crop if needed */
   border-radius: 0.5rem;        /* round avatar (optional) */
+}
+.media_icon
+{
+  width: 15px;
+  height: 15px;
+  aspect-ratio: 1;
+  object-fit: fill;
+  border-radius: 0.5rem;
+  
 }
 .media--reverse { flex-direction: row-reverse; }
 
