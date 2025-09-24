@@ -1,18 +1,30 @@
 :root { --max: 900px; font-family: math; }
 * { box-sizing: border-box; }
-body { margin: 0; line-height: 1.5; }
+h2 { box-sizing: border-box;color: 0A192F; }
+h1 {color: 0A192F;}
+body { margin: 0; line-height: 1.5; background-color: #F8F9FA;}
 header, main, footer { max-width: var(--max); margin: 0 auto; padding: 1rem; }
-header { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; border-bottom: 1px solid #ddd; }
-nav a { margin-right: .75rem; text-decoration: none; color: #000;}
-nav a:hover { text-decoration: underline; text-align: center; }
+header { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; border-bottom: 1px solid #0A192F; }
+nav a { margin-right: .75rem; text-decoration: none; color: #0A192F;}
+nav a:hover { text-decoration: underline; text-align: center; color: #008080;}
 section { padding-block: 1rem; }
 article { padding: 1rem; border: 1px solid #eee; border-radius: .75rem; box-shadow: 0 4px 6px rgba(0,0,0,.1);background: #f9f9f9;}
-footer { border-top: 1px solid #ddd; color: #555; }
+footer { border-top: 1px solid #0A192F; color: #0A192F; }
 
 .media {
   display: flex;
   align-items: flex-start;   /* use 'center' to vertical-center the box */
   gap: 1rem;                 /* space between image and box */
+}
+
+nav ul {
+  list-style-type: none;   /* remove bullets */
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  margin: 10px 0;          /* spacing between links */
 }
 
 /* Image */
@@ -21,6 +33,7 @@ footer { border-top: 1px solid #ddd; color: #555; }
   aspect-ratio: 1;           /* keep it square */
   object-fit: cover;         /* crop if needed */
   border-radius: 0.5rem;        /* round avatar (optional) */
+  border: 1px solid #008080;
 }
 .media_icon
 {
@@ -37,16 +50,16 @@ footer { border-top: 1px solid #ddd; color: #555; }
 .media__box {
   flex: 1;                   /* take remaining space */
   min-width: 0;              /* allows flex item to shrink instead of overflowing */
-  background: #fff;          /* “box” look (optional) */
-  border: 1px solid #ffffff;
+  background: #F8F9FA;          /* “box” look (optional) */
+  border: 1px solid #008080;
   border-radius: .5rem;
   padding: 1rem;
   box-shadow: 0 6px 16px rgba(0,0,0,.08);
 }
 
 /* (Optional) Tidy button style */
-.btn { display:inline-block; padding:.5rem .75rem; border:1px solid #ddd; border-radius:.5rem; text-decoration:none; color: black}
-.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.12); }
+.btn { display:inline-block; padding:.5rem .75rem; border:1px solid #ddd; border-radius:.5rem; text-decoration:none; color: white;background-color: #0A192F;}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.12); background-color: 008080;}
 
 
 /* Responsive: stack on small screens */
