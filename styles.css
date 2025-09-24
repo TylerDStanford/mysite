@@ -1,92 +1,184 @@
-:root { --max: 900px; font-family: math; }
-* { box-sizing: border-box; }
-h2 { box-sizing: border-box;color: 0A192F; }
-h1 {color: 0A192F;}
-body { margin: 0; line-height: 1.5; background-color: #F8F9FA;}
-header, main, footer { max-width: var(--max); margin: 0 auto; padding: 1rem; }
-header { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; border-bottom: 1px solid #0A192F; }
-nav a { margin-right: .75rem; text-decoration: none; color: #0A192F;}
-nav a:hover { text-decoration: underline; text-align: center; color: #008080;}
-section { padding-block: 1rem; }
-article { padding: 1rem; border: 1px solid #eee; border-radius: .75rem; box-shadow: 0 4px 6px rgba(0,0,0,.1);background: #f9f9f9;}
-footer { border-top: 1px solid #0A192F; color: #0A192F; }
+/* ==========================================================================
+   Tyler Stanford — Portfolio Styles (Organized)
+   Palette: Navy (#0A192F), Teal (#008080), Light BG (#F8F9FA), Text (#333333)
+   Structure:
+     1) CSS Reset & Variables
+     2) Base (html/body/type)
+     3) Layout (header/main/footer/sections)
+     4) Navigation
+     5) Components (media, buttons, cards/projects)
+     6) Utilities
+     7) Responsive
+   ========================================================================== */
 
-.media {
-  display: flex;
-  align-items: flex-start;   /* use 'center' to vertical-center the box */
-  gap: 1rem;                 /* space between image and box */
+/* 1) Reset & Variables ----------------------------------------------------- */
+* { box-sizing: border-box; }
+:root {
+  --max: 900px;
+  --color-navy: #0A192F;
+  --color-teal: #008080;
+  --color-bg: #F8F9FA;
+  --color-text: #333333;
+  --radius: 0.75rem;
+  --shadow-sm: 0 4px 6px rgba(0,0,0,.1);
+  --shadow-md: 0 10px 24px rgba(0,0,0,.12);
+  --shadow-soft: 0 6px 16px rgba(0,0,0,.08);
 }
 
+/* 2) Base ------------------------------------------------------------------ */
+html, body { margin: 0; padding: 0; }
+body {
+  line-height: 1.5;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Headings */
+h1, h2, h3, h4 { color: var(--color-navy); margin-top: 0; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+
+/* 3) Layout ---------------------------------------------------------------- */
+header, main, footer {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-navy);
+}
+
+section { padding-block: 1rem; }
+
+footer {
+  border-top: 1px solid var(--color-navy);
+  color: var(--color-navy);
+}
+
+/* 4) Navigation ------------------------------------------------------------ */
 nav ul {
-  list-style-type: none;   /* remove bullets */
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
-nav li {
-  margin: 10px 0;          /* spacing between links */
+nav li { margin: 10px 0; } /* vertical stack; remove if you want horizontal */
+
+nav a {
+  margin-right: .75rem;
+  text-decoration: none;
+  color: var(--color-navy);
+  font-weight: 500;
 }
+
+nav a:hover { text-decoration: underline; color: var(--color-teal); }
+
+/* 5) Components ------------------------------------------------------------ */
+/* Media object (image + text box side-by-side) */
+.media {
+  display: flex;
+  align-items: flex-start; /* use 'center' to vertical-center the box */
+  gap: 1rem;               /* space between image and box */
+}
+
+.media--reverse { flex-direction: row-reverse; }
 
 /* Image */
 .media__img {
-  width: 250px;              /* the visual width you want */
-  aspect-ratio: 1;           /* keep it square */
-  object-fit: cover;         /* crop if needed */
-  border-radius: 0.5rem;        /* round avatar (optional) */
-  border: 1px solid #008080;
+  width: 250px;          /* visual width */
+  aspect-ratio: 1;       /* keep it square */
+  object-fit: cover;     /* crop if needed */
+  border-radius: 0.5rem; /* rounded avatar */
+  border: 1px solid var(--color-teal);
 }
-.media_icon
-{
+
+.media_icon {
   width: 15px;
   height: 15px;
   aspect-ratio: 1;
   object-fit: fill;
   border-radius: 0.5rem;
-  
 }
-.media--reverse { flex-direction: row-reverse; }
 
 /* Text box */
 .media__box {
-  flex: 1;                   /* take remaining space */
-  min-width: 0;              /* allows flex item to shrink instead of overflowing */
-  background: #F8F9FA;          /* “box” look (optional) */
-  border: 1px solid #008080;
+  flex: 1;                /* take remaining space */
+  min-width: 0;           /* allows flex item to shrink instead of overflowing */
+  background: var(--color-bg);
+  border: 1px solid var(--color-teal);
   border-radius: .5rem;
   padding: 1rem;
-  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  box-shadow: var(--shadow-soft);
 }
 
-/* (Optional) Tidy button style */
-.btn { display:inline-block; padding:.5rem .75rem; border:1px solid #ddd; border-radius:.5rem; text-decoration:none; color: white;background-color: #0A192F;}
-.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0,0,0,.12); background-color: 008080;}
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: .5rem .75rem;
+  border: 1px solid transparent;
+  border-radius: .5rem;
+  text-decoration: none;
+  color: #FFFFFF;
+  background-color: var(--color-navy);
+  font-weight: 600;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
 
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+  background-color: var(--color-teal);
+}
 
-/* Responsive: stack on small screens */
+/* Cards / Article (used in projects and general content blocks) */
+article {
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  background: #fff;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+article:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Projects grid */
+#projects .grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#projects .grid > article {
+  flex: 1 1 280px; /* default (mobile) */
+}
+
+/* 6) Utilities ------------------------------------------------------------- */
+/* Add any small helper classes here if needed */
+
+/* 7) Responsive ------------------------------------------------------------ */
 @media (max-width: 600px) {
-  .media { flex-direction: column; align-items: center; text-align: center; }
+  .media {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
   .media__box { width: 100%; }
 }
 
-/*Used to make the project boxes stack on top of eachother on small screens or double up on large ones.*/
-#projects .grid { display: flex; flex-wrap: wrap; gap: 1rem; }
-#projects .grid > article { flex: 1 1 280px; }
-
-/*Makes the animation when you hover over each project box*/
-article {
-    transition: transform .15s ease, box-shadow .15s ease;
-    background: #fff; 
-  }
-  
-  article:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(0,0,0,.12);
-  }
-
-/* default (mobile): the flex above already stacks nicely */
-
 @media (min-width: 700px) {
-    #projects .grid > article {
-      flex: 1 1 320px; /* a bit wider on tablets+ */
-    }
-  }
+  #projects .grid > article { flex: 1 1 320px; } /* a bit wider on tablets+ */
+}
