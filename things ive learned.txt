@@ -13,3 +13,12 @@ Margin
 
 rem
 -number system? each value is a number followed by"rem" like "1rem" = 1
+
+nav
+-links, can also have a hover nav subclass to make a cool hover animation
+
+nav ul/li
+-bullets or vertical stack instead of horizontal
+
+grid
+-use grid for better layout of the "cards" like in projects
