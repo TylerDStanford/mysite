@@ -1,0 +1,3 @@
+The purpose of this website is not only to serve as a practice ground for my HTML skills, but also to provide a platform that reflects who I am beyond a traditional résumé. While a résumé can only capture so much, I hope this site allows anyone—future employers and visitors alike—to learn more about me and easily get in touch.
+
+If you have any questions about my site or suggestions for improvement, feel free to reach out. My contact information is available on the contact page.
